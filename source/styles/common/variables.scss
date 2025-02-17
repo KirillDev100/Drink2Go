@@ -1,1 +1,27 @@
 /* здесь используйте глобальные переменные */
+@mixin font-face($font-family, $font-weight, $font-style, $src-woff-2, $src-woff) {
+  @font-face {
+    font-family: $font-family;
+    font-weight: $font-weight;
+    font-style: $font-style;
+    src: $src-woff-2, $src-woff;
+    font-display: swap;
+  }
+}
+
+
+$tablet-width: 767.99px;
+$desktop-width: 1440px;
+
+$base-gray: #bdbdbd;
+$base-black: #333333;
+$base-primary: #7859cf;
+$base-secondary: #f0ebff;
+$primary-opacity: rgba(120, 89, 207, 0.25);
+$primary-lighter: #9070ec;
+$primary-darker: #593cac;
+$light-gray: #e2e2e2;
+$lightest-gray: #f8f8f8;
+$flat-white: #f3ebe1;
+$lavender-latte: #eae6fc;
+$espresso: #e5e6e8;

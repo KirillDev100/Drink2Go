@@ -1,0 +1,35 @@
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media (min-width: $tablet-width) {
+    display: flex;
+    width: auto;
+    height: auto;
+  }
+
+  @media (min-width: $desktop-width) {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0%;
+    color: $base-black;
+    text-decoration: none;
+    justify-content: space-between;
+    width: 316px;
+    gap: 20px;
+  }
+}
+
+.logo__image {
+  display: block;
+}
+
+.logo__text {
+  display: none;
+
+  @media (min-width: $desktop-width) {
+    display: block;
+  }
+}

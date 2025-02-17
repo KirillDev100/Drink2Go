@@ -1,0 +1,27 @@
+.slider-pagination {
+  justify-content: center;
+  gap: 8px;
+}
+
+.slider-pagination__label {
+  width: 62px;
+  height: 4px;
+  background-color: #ffffff;
+  cursor: pointer;
+  transition-duration: 0.3s;
+
+  &:hover,
+  &:focus {
+    background-color: $primary-opacity;
+  }
+
+  &:active {
+    background-color: $base-primary;
+  }
+}
+
+.slider-pagination__input {
+  &:checked + .slider-pagination__label {
+    background-color: $base-primary;
+  }
+}

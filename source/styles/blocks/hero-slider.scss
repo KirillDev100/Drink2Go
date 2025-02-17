@@ -1,0 +1,16 @@
+.hero-slider {
+  width: 280px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  overflow: hidden;
+
+  @media (min-width: $tablet-width) {
+    width: 608px;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 1280px;
+  }
+}

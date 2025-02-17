@@ -1,0 +1,39 @@
+.title {
+  font-weight: 700;
+  color: $base-black;
+}
+
+h2.title {
+  font-size: 24px;
+  line-height: 36px;
+  letter-spacing: 0%;
+  text-align: center;
+
+  @media (min-width: $tablet-width) {
+    font-size: 42px;
+    line-height: 64px;
+  }
+
+  @media (min-width: $desktop-width) {
+    font-size: 42px;
+    line-height: 64px;
+  }
+}
+
+h3.title {
+  font-size: 18px;
+  line-height: 32px;
+  letter-spacing: 0%;
+
+  @media (min-width: $tablet-width) {
+    font-size: 24px;
+    line-height: 36px;
+  }
+}
+
+h4.title {
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 2%;
+  color: #7859cf;
+}

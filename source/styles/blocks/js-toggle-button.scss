@@ -1,0 +1,24 @@
+.js-toggle-button {
+  width: 60px;
+  height: 60px;
+  background-image: url("../../icons/stack.svg#hamburger");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 16px 16px;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+
+  &:active {
+    background-color: $base-secondary;
+  }
+
+  &--close {
+    background-image: url("../../icons/stack.svg#close");
+  }
+
+  @media (min-width: $tablet-width) {
+    display: none;
+  }
+}

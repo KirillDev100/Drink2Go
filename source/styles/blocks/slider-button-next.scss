@@ -1,0 +1,44 @@
+.slider-button-next {
+  padding: 0;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(-180deg);
+  flex-grow: 1;
+
+  &::before {
+    content: "";
+    display: block;
+    width: 20px;
+    height: 20px;
+    mask-image: url("../../icons/stack.svg#arrow");
+    mask-size: 20px 20px;
+    mask-repeat: no-repeat;
+    background-color: $base-primary;
+  }
+
+  &:hover,
+  &:focus {
+    background-image: linear-gradient(90deg, #ffffff 0%, rgba(255, 255, 255, 0) 100%);
+    outline: none;
+  }
+
+  &:active {
+    background-image: linear-gradient(90deg, rgba(120, 89, 207, 0.25) 0%, rgba(120, 89, 207, 0) 100%);
+  }
+
+  &:disabled {
+    background: none;
+
+    &::before {
+      background-color: $base-gray;
+    }
+  }
+
+  @media (min-width: $tablet-width) and (max-width: calc($desktop-width - 1px)) {
+    height: 640px;
+  }
+}

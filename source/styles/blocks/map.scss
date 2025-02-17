@@ -1,0 +1,11 @@
+.map picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.map__image {
+  display: block;
+  object-fit: cover;
+  width: 100%;
+}
