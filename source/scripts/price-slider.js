@@ -4,9 +4,10 @@ const SLIDER_START = 0;
 const SECOND_SLIDER_START = 900;
 const SLIDER_STEP = 1;
 
-const slider = document.querySelector('#no-ui-slider');
-const sliderMinInput = document.querySelector('#no-ui-slider-min');
-const sliderMaxInput = document.querySelector('#no-ui-slider-max');
+const slider = document.querySelector('#price-slider');
+const sliderMinInput = document.querySelector('#price-slider-min');
+const sliderMaxInput = document.querySelector('#price-slider-max');
+const filterReset = document.querySelector('.filter__reset');
 
 noUiSlider.create(slider, {
   start: [SLIDER_START, SECOND_SLIDER_START],
@@ -16,6 +17,7 @@ noUiSlider.create(slider, {
     'max': SLIDER_MAX
   },
   step: SLIDER_STEP,
+  cssPrefix: 'price-slider__',
   format: {
     to: function (value) {
       if (Number.isInteger(value)) {
@@ -40,9 +42,14 @@ sliderMinInput.addEventListener('input', () => {
   }
   slider.noUiSlider.set([sliderMinInput.value, null]);
 });
+
 sliderMaxInput.addEventListener('input', () => {
   if (!sliderMaxInput.value) {
     slider.noUiSlider.set([null, 0]);
   }
   slider.noUiSlider.set([null, sliderMaxInput.value]);
+});
+
+filterReset.addEventListener('click', () => {
+  slider.noUiSlider.set([SLIDER_START, SECOND_SLIDER_START]);
 });

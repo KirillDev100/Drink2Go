@@ -7,3 +7,5 @@ raw/**/*.jpeg
 raw/**/*.png
 raw/**/*.svg
 !raw/**/README.md
+backstop_data
+npm-cache

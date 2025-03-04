@@ -18,6 +18,7 @@
 
   @media (min-width: $desktop-width) {
     padding: 30px 25px;
+    padding-right: 0;
     padding-bottom: 84px;
     grid-template-columns: auto 1fr;
     gap: 30px;
@@ -27,9 +28,19 @@
 .hero-slide__image {
   display: block;
   margin-bottom: 10px;
+  max-width: unset;
+  width: 280px;
+  height: 280px;
 
   @media (min-width: $tablet-width) {
     margin: 0 auto;
+    width: 476px;
+    height: 476px;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 600px;
+    height: 600px;
   }
 }
 
@@ -175,4 +186,3 @@
     background-color: $base-gray;
   }
 }
-

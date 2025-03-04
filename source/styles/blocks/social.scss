@@ -31,7 +31,8 @@
   margin: 0;
   padding: 0;
   list-style: none;
-  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
 }
 
 .social__link {
@@ -41,10 +42,21 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 4px;
 
   &:hover,
   &:focus,
   &:active {
     color: $base-primary;
+    outline: none;
+  }
+
+  &:hover,
+  &:focus {
+    background-color: $base-secondary;
+  }
+
+  &:active {
+    background-color: $primary-opacity;
   }
 }

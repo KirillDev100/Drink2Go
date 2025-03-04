@@ -56,7 +56,8 @@
     display: block;
     width: 10px;
     height: 6px;
-    background-image: url("../../icons/stack.svg#select-arrow");
+    mask-image: url("../../icons/stack.svg#select-arrow");
+    background-color: $base-primary;
     margin-top: 1px;
   }
 
@@ -66,6 +67,41 @@
 
   &--forward::after {
     transform: rotate(-90deg);
+  }
+
+  &--back:hover::after,
+  &--back:focus::after,
+  &--back:disabled::after,
+  &--back:active::after,
+  &--forward:hover::after,
+  &--forward:focus::after,
+  &--forward:disabled::after,
+  &--forward:active::after {
+    background-color: #ffffff;
+  }
+
+  &:hover,
+  &:focus {
+    background-color: $primary-lighter;
+    color: #ffffff;
+    outline: none;
+  }
+
+  &:active {
+    background-color: $primary-darker;
+  }
+
+  &:disabled {
+    background-color: $light-gray;
+    color: #ffffff;
+  }
+
+  &--current:hover,
+  &--current:focus,
+  &--current:active,
+  &--current:disabled {
+    color: $base-black;
+    background-color: transparent;
   }
 
   @media (min-width: $tablet-width) {

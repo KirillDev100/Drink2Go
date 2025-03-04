@@ -32,10 +32,11 @@
 
   &:disabled {
     background: none;
+    cursor: auto;
+  }
 
-    &::before {
-      background-color: $base-gray;
-    }
+  &:disabled::before {
+    background-color: $base-gray;
   }
 
   @media (min-width: $tablet-width) and (max-width: calc($desktop-width - 1px)) {

@@ -6,12 +6,12 @@
   @media (max-width: 319px) {
     padding-left: 20px;
     padding-right: 20px;
+    width: 280px;
   }
 
   @media (min-width: $tablet-width) {
     padding: 0;
     border: none;
-    padding-bottom: 8px;
   }
 }
 
@@ -38,10 +38,6 @@
     gap: 6px;
   }
 
-  &--address {
-    margin-bottom: 0;
-  }
-
   &--phone::before {
     content: "";
     display: block;
@@ -49,6 +45,10 @@
     height: 16px;
     margin-top: 2px;
     background-image: url("../../icons/stack.svg#phone");
+  }
+
+  &--address {
+    margin-bottom: 0;
   }
 }
 
@@ -61,6 +61,16 @@
   text-transform: uppercase;
   text-decoration: none;
   display: block;
+
+  &:hover,
+  &:focus {
+    color: $primary-lighter;
+    outline: none;
+  }
+
+  &:active {
+    color: $primary-darker;
+  }
 }
 
 .main-footer-column__item--phone .main-footer-column__link {
@@ -68,6 +78,7 @@
   font-size: 14px;
   line-height: 20px;
   letter-spacing: 0%;
+  padding: 0;
 }
 
 .main-footer-column__address {
@@ -77,9 +88,9 @@
   font-size: 14px;
   line-height: 20px;
   letter-spacing: 0%;
-  margin-bottom: 16px;
   display: flex;
   gap: 6px;
+  margin-bottom: 16px;
 
   &::before {
     content: "";

@@ -1,10 +1,16 @@
-/*! nouislider - 15.6.0 - 05/01/2022 */
-/* Functional styling;
- * These styles are required for noUiSlider to function.
- * You don't need to change these rules to apply your design.
- */
-.noUi-target,
-.noUi-target * {
+.price-slider__no-ui-slider {
+  margin-bottom: 35px;
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 31px;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin-bottom: 33px;
+  }
+}
+
+.price-slider__target * {
   -webkit-touch-callout: none;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   touch-action: none;
@@ -12,12 +18,13 @@
   box-sizing: border-box;
 }
 
-.noUi-target {
+.price-slider__target {
   position: relative;
+  background-color: $light-gray;
 }
 
-.noUi-base,
-.noUi-connects {
+.price-slider__base,
+.price-slider__connects {
   width: 256px;
   height: 4px;
   position: absolute;
@@ -35,13 +42,14 @@
 }
 /* Wrapper for all connect elements.
   */
-.noUi-connects {
+.price-slider__connects {
   overflow: hidden;
   z-index: 0;
+  height: 4px;
 }
 
-.noUi-connect,
-.noUi-origin {
+.price-slider__connect,
+.price-slider__origin {
   will-change: transform;
   position: absolute;
   z-index: 1;
@@ -54,23 +62,23 @@
 }
 /* Offset direction
   */
-.noUi-txt-dir-rtl.noUi-horizontal .noUi-origin {
+.price-slider__txt-dir-rtl.price-slider__horizontal .price-slider__origin {
   left: 0;
   right: auto;
 }
 /* Give origins 0 height/width so they don't interfere with clicking the
   * connect elements.
   */
-.noUi-vertical .noUi-origin {
+.price-slider__vertical .price-slider__origin {
   top: -100%;
   width: 0;
 }
 
-.noUi-horizontal .noUi-origin {
+.price-slider__horizontal .price-slider__origin {
   height: 0;
 }
 
-.noUi-handle {
+.price-slider__handle {
   backface-visibility: hidden;
   position: absolute;
   width: 24px;
@@ -80,6 +88,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  background: #ffffff;
+  cursor: pointer;
 
   &::before {
     content: "";
@@ -92,8 +102,8 @@
   }
 }
 
-.noUi-handle:focus,
-.noUi-handle:hover {
+.price-slider__handle:focus,
+.price-slider__handle:hover {
   outline: none;
 
   &::before {
@@ -101,82 +111,71 @@
   }
 }
 
-.noUi-handle:active {
+.price-slider__handle:active {
   &::before {
     background-color: $base-primary;
   }
 }
 
-.noUi-touch-area {
+.price-slider__touch-area {
   position: absolute;
   height: 100%;
   width: 100%;
 }
 
-.noUi-state-tap .noUi-connect,
-.noUi-state-tap .noUi-origin {
+.price-slider__state-tap .price-slider__connect,
+.price-slider__state-tap .price-slider__origin {
   transition: transform 0.3s;
 }
 
-.noUi-state-drag * {
-  cursor: inherit !important;
+.price-slider__state-drag * {
+  cursor: inherit;
 }
 /* Slider size and handle placement;
   */
-.noUi-horizontal {
+.price-slider__horizontal {
   height: 2px;
 }
 
-.noUi-horizontal .noUi-handle {
+.price-slider__horizontal .price-slider__handle {
   right: -17px;
   top: -11px;
 }
 
-.noUi-vertical {
+.price-slider__vertical {
   width: 18px;
 }
 
-.noUi-vertical .noUi-handle {
+.price-slider__vertical .price-slider__handle {
   width: 28px;
   height: 34px;
   right: -6px;
   bottom: -17px;
 }
 
-.noUi-txt-dir-rtl.noUi-horizontal .noUi-handle {
+.price-slider__txt-dir-rtl.price-slider__horizontal .price-slider__handle {
   left: -17px;
   right: auto;
 }
 /* Styling;
   * Giving the connect element a border radius causes issues with using transform: scale
   */
-.noUi-target {
-  background-color: $light-gray;
-}
 
-.noUi-connects {
-  height: 4px;
-}
-
-.noUi-connect {
+.price-slider__connect {
   background: $primary-lighter;
   height: 4px;
 }
 /* Handles and cursors;
   */
-.noUi-draggable {
+.price-slider__draggable {
   cursor: ew-resize;
 }
 
-.noUi-vertical .noUi-draggable {
+.price-slider__vertical .price-slider__draggable {
   cursor: ns-resize;
 }
 
-.noUi-handle {
-  background: #ffffff;
-}
-
-.noUi-active {
+.price-slider__active {
   &::before {
     background-color: $base-primary;
   }
@@ -185,18 +184,18 @@
   */
 /* Disabled state;
   */
-[disabled] .noUi-connect {
+[disabled] .price-slider__connect {
   background: $base-gray;
 }
 
-[disabled].noUi-target,
-[disabled].noUi-handle,
-[disabled] .noUi-handle {
+[disabled].price-slider__target,
+[disabled].price-slider__handle,
+[disabled] .price-slider__handle {
   cursor: not-allowed;
 }
 
-[disabled].noUi-handle,
-[disabled] .noUi-handle {
+[disabled].price-slider__handle,
+[disabled] .price-slider__handle {
   border-color: $base-gray;
 
   &::before {
@@ -206,47 +205,47 @@
 /* Base;
   *
   */
-.noUi-pips,
-.noUi-pips * {
+.price-slider__pips,
+.price-slider__pips * {
   box-sizing: border-box;
 }
 
-.noUi-pips {
+.price-slider__pips {
   position: absolute;
   color: #999999;
 }
 /* Values;
   *
   */
-.noUi-value {
+.price-slider__value {
   position: absolute;
   white-space: nowrap;
   text-align: center;
 }
 
-.noUi-value-sub {
+.price-slider__value-sub {
   color: #cccccc;
   font-size: 10px;
 }
 /* Markings;
   *
   */
-.noUi-marker {
+.price-slider__marker {
   position: absolute;
   background: #cccccc;
 }
 
-.noUi-marker-sub {
+.price-slider__marker-sub {
   background: #aaaaaa;
 }
 
-.noUi-marker-large {
+.price-slider__marker-large {
   background: #aaaaaa;
 }
 /* Horizontal layout;
   *
   */
-.noUi-pips-horizontal {
+.price-slider__pips-horizontal {
   padding: 10px 0;
   height: 80px;
   top: 100%;
@@ -254,61 +253,61 @@
   width: 100%;
 }
 
-.noUi-value-horizontal {
+.price-slider__value-horizontal {
   transform: translate(-50%, 50%);
 }
 
-.noUi-rtl .noUi-value-horizontal {
+.price-slider__rtl .price-slider__value-horizontal {
   transform: translate(50%, 50%);
 }
 
-.noUi-marker-horizontal.noUi-marker {
+.price-slider__marker-horizontal.price-slider__marker {
   margin-left: -1px;
   width: 2px;
   height: 5px;
 }
 
-.noUi-marker-horizontal.noUi-marker-sub {
+.price-slider__marker-horizontal.price-slider__marker-sub {
   height: 10px;
 }
 
-.noUi-marker-horizontal.noUi-marker-large {
+.price-slider__marker-horizontal.price-slider__marker-large {
   height: 15px;
 }
 /* Vertical layout;
   *
   */
-.noUi-pips-vertical {
+.price-slider__pips-vertical {
   padding: 0 10px;
   height: 100%;
   top: 0;
   left: 100%;
 }
 
-.noUi-value-vertical {
+.price-slider__value-vertical {
   transform: translate(0, -50%);
   padding-left: 25px;
 }
 
-.noUi-rtl .noUi-value-vertical {
+.price-slider__rtl .price-slider__value-vertical {
   transform: translate(0, 50%);
 }
 
-.noUi-marker-vertical.noUi-marker {
+.price-slider__marker-vertical.price-slider__marker {
   width: 5px;
   height: 2px;
   margin-top: -1px;
 }
 
-.noUi-marker-vertical.noUi-marker-sub {
+.price-slider__marker-vertical.price-slider__marker-sub {
   width: 10px;
 }
 
-.noUi-marker-vertical.noUi-marker-large {
+.price-slider__marker-vertical.price-slider__marker-large {
   width: 15px;
 }
 
-.noUi-tooltip {
+.price-slider__tooltip {
   display: block;
   position: absolute;
   border: 1px solid #d9d9d9;
@@ -320,25 +319,25 @@
   white-space: nowrap;
 }
 
-.noUi-horizontal .noUi-tooltip {
+.price-slider__horizontal .price-slider__tooltip {
   transform: translate(-50%, 0);
   left: 50%;
   bottom: 120%;
 }
 
-.noUi-vertical .noUi-tooltip {
+.price-slider__vertical .price-slider__tooltip {
   transform: translate(0, -50%);
   top: 50%;
   right: 120%;
 }
 
-.noUi-horizontal .noUi-origin > .noUi-tooltip {
+.price-slider__horizontal .price-slider__origin > .price-slider__tooltip {
   transform: translate(50%, 0);
   left: auto;
   bottom: 10px;
 }
 
-.noUi-vertical .noUi-origin > .noUi-tooltip {
+.price-slider__vertical .price-slider__origin > .price-slider__tooltip {
   transform: translate(0, -18px);
   top: auto;
   right: 28px;

@@ -57,18 +57,6 @@
   margin-bottom: 31px;
 }
 
-.filter__no-ui-slider {
-  margin-bottom: 35px;
-
-  @media (min-width: $tablet-width) {
-    margin-bottom: 31px;
-  }
-
-  @media (min-width: $desktop-width) {
-    margin-bottom: 33px;
-  }
-}
-
 .filter__no-ui-slider-inputs-wrapper {
   display: flex;
   justify-content: space-between;
@@ -111,6 +99,7 @@
   box-sizing: border-box;
   border-radius: 4px;
   outline: none;
+  appearance: none;
 
   &::placeholder {
     color: $base-gray;
@@ -121,8 +110,9 @@
   }
 
   &:disabled {
-    color: $lightest-gray;
     border-color: $light-gray;
+    background-color: $lightest-gray;
+    color: $base-gray;
   }
 
   @media (min-width: $tablet-width) {
@@ -155,6 +145,8 @@
   justify-content: center;
   align-items: center;
   transition: border 0.5s;
+  flex-shrink: 0;
+  cursor: pointer;
 
   &::before {
     content: "";
@@ -168,8 +160,7 @@
   }
 }
 
-.filter__radio-label:hover .filter__radio-label-custom,
-.filter__radio-label:focus-within .filter__radio-label-custom {
+.filter__radio-label:hover .filter__radio-label-custom {
   border-color: $primary-lighter;
 
   &::before {
@@ -185,9 +176,18 @@
   }
 }
 
+.filter__radio-label input:focus-visible ~ .filter__radio-label-custom {
+  border-color: $primary-lighter;
+
+  &::before {
+    background-color: $primary-opacity;
+  }
+}
+
 .filter__radio-label input:disabled ~ .filter__radio-label-custom {
   border-color: $light-gray;
   background-color: transparent;
+  cursor: auto;
 
   &::before {
     display: none;
@@ -221,6 +221,8 @@
   border: 2px solid transparent;
   display: flex;
   align-items: center;
+  flex-shrink: 0;
+  cursor: pointer;
 
   &::before {
     content: "";
@@ -234,8 +236,7 @@
   }
 }
 
-.filter__checkbox-label:hover .filter__checkbox-label-custom,
-.filter__checkbox-label:focus-within .filter__checkbox-label-custom {
+.filter__checkbox-label:hover .filter__checkbox-label-custom {
   background-color: $primary-opacity;
   border-color: $primary-lighter;
 }
@@ -249,9 +250,15 @@
   }
 }
 
+.filter__checkbox-label input:focus-visible ~ .filter__checkbox-label-custom {
+  background-color: $primary-opacity;
+  border-color: $primary-lighter;
+}
+
 .filter__checkbox-label input:disabled ~ .filter__checkbox-label-custom {
   background-color: $light-gray;
   border-color: transparent;
+  cursor: auto;
 
   &::before {
     background-color: $lightest-gray;
@@ -270,7 +277,7 @@
   @media (min-width: $tablet-width) {
     width: 277px;
     display: flex;
-    justify-content: space-between;
+    gap: 20px;
   }
 
   @media (min-width: $desktop-width) {
@@ -368,4 +375,3 @@
     width: 149px;
   }
 }
-

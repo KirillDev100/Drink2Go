@@ -24,6 +24,17 @@
 
 .logo__image {
   display: block;
+  max-width: unset;
+  width: 32px;
+  height: 36px;
+
+  @media (min-width: $tablet-width) {
+    width: 82px;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 170px;
+  }
 }
 
 .logo__text {

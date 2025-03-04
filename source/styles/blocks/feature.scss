@@ -50,9 +50,11 @@
 .feature__title {
   margin: 0;
   margin-bottom: 4px;
+  text-align: center;
 
   @media (min-width: $tablet-width) and (max-width: calc($desktop-width - 1px)) {
     margin-bottom: 10px;
+    text-align: left;
   }
 }
 

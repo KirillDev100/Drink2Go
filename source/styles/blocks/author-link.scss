@@ -1,0 +1,29 @@
+.author-link {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0%;
+  color: $base-gray;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.author-link__link {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  text-decoration: none;
+  color: $base-gray;
+
+  &:hover,
+  &:focus {
+    color: $base-primary;
+    outline: none;
+  }
+
+  &:active {
+    color: $primary-darker;
+  }
+}

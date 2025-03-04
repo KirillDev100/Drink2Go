@@ -27,6 +27,8 @@
   display: block;
   margin: 0 auto;
   margin-bottom: 24px;
+  width: 130px;
+  height: 188px;
 
   @media (min-width: $tablet-width) {
     margin-bottom: 30px;
@@ -78,6 +80,7 @@
 }
 
 .product__to-basket {
+  font-family: $montserrat;
   font-weight: 400;
   font-size: 14px;
   line-height: 20px;
@@ -88,8 +91,10 @@
   display: flex;
   background-color: $base-primary;
   border-radius: 4px;
-  justify-content: space-between;
+  gap: 6px;
   align-items: center;
+  border: none;
+  cursor: pointer;
 
   &:hover,
   &:focus {
@@ -110,5 +115,6 @@
     background-image: url("../../icons/stack.svg#basket");
     width: 20px;
     height: 16px;
+    flex-shrink: 0;
   }
 }

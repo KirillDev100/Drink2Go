@@ -4,6 +4,10 @@
   width: 100vw;
   padding-bottom: 30px;
 
+  @media (max-width: 319px) {
+    width: 320px;
+  }
+
   @media (min-width: $tablet-width) {
     width: 768px;
     padding: 40px 20px;
@@ -41,6 +45,14 @@
   }
 }
 
+.main-footer__logo img {
+  width: 82px;
+
+  @media (min-width: $tablet-width) {
+    width: 170px;
+  }
+}
+
 .main-footer__list {
   margin: 0;
   padding: 0;
@@ -62,23 +74,5 @@
 }
 
 .main-footer__author-link {
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 16px;
-  letter-spacing: 0%;
-  color: $base-gray;
-  text-decoration: none;
-  justify-content: center;
-  display: flex;
-  align-items: center;
-  gap: 4px;
-}
-
-.main-footer__author-link:hover .main-footer__author-logo,
-.main-footer__author-link:focus .main-footer__author-logo {
-  color: $base-primary;
-}
-
-.main-footer__author-link:active .main-footer__author-logo {
-  color: $primary-darker;
+  margin: 0;
 }

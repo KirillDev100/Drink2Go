@@ -38,7 +38,7 @@
     display: flex;
     flex-wrap: wrap;
     position: static;
-    width: auto;
+    width: 399px;
     box-sizing: border-box;
     margin-right: 60px;
     transform: none;
@@ -46,12 +46,17 @@
 
   @media (min-width: $desktop-width) {
     margin-right: 162px;
-    gap: 20px;
+    column-gap: 20px;
+    width: 458px;
   }
 }
 
 .main-navigation__list--visible {
   display: block;
+
+  @media (min-width: $tablet-width) {
+    display: flex;
+  }
 }
 
 .main-navigation__item {
@@ -112,9 +117,11 @@
   margin: 0;
   padding: 0;
   list-style: none;
+  width: 120px;
 
   @media (min-width: $desktop-width) {
-    gap: 20px;
+    column-gap: 20px;
+    width: 261px;
   }
 }
 
